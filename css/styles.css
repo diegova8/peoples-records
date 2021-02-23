@@ -135,7 +135,12 @@ html * {
     color: #4A4A4A;
     letter-spacing: 0;
     line-height: 30px;
-    padding: 10px 40px 20px 40px;
+}
+
+@media (min-width: 1200px) {
+    .ltv-info-wrapper .ltv-info-text p {
+        padding: 10px 40px 20px 40px;
+    }
 }
 
 .ltv-item {
@@ -143,8 +148,8 @@ html * {
 }
 
 .ltv-item .ltv-item-number-container {
-    width: 90px;
-    height: 90px;
+    width: 50.4px;
+    height: 50.4px;
     background-color: #004A80;
     border-radius: 50px;
     display: flex;
@@ -152,21 +157,51 @@ html * {
     justify-content: center;
     margin-top: 15px;
     margin-right: 20px;
-
 }
 
 .ltv-item .ltv-item-number-container .ltv-item-number {
     font-family: HelveticaNeue-Bold;
-    font-size: 48px;
+    font-size: 26.88px;
     color: #F6BC25;
     letter-spacing: 0;
     text-align: center;
 }
 
+
 .ltv-item .ltv-item-text-container {
     width: 100%;
-    max-width: 358px;
+    max-width: 223px;
 }
+
+@media (min-width: 992px) { 
+    .ltv-item .ltv-item-number-container {
+        width: 63px;
+        height: 63px;
+    }
+
+    .ltv-item .ltv-item-number-container .ltv-item-number {
+        font-size: 33.6px;
+    }
+
+    .ltv-item .ltv-item-text-container {
+        max-width: 264px;
+    }
+}
+
+@media (min-width: 1200px) { 
+    .ltv-item .ltv-item-number-container {
+        width: 90px;
+        height: 90px;
+    }
+
+    .ltv-item .ltv-item-number-container .ltv-item-number {
+        font-size: 48px;
+    }
+
+    .ltv-item .ltv-item-text-container {
+        max-width: 358px;   
+    }
+ }
 
 .ltv-item .ltv-item-text-container h4 {
     font-family: HelveticaNeue-Bold;
