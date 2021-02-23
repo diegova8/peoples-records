@@ -3,17 +3,149 @@
     <meta charset="utf-8">
     <title>LTV</title>
     <meta name="description" content="People's records search">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   </head>
 
   <body>
-    <div>
-      <h1>People's records app</h1>
+    <div class="ltv-container">
+      <div class="ltv-top-section">
+        <header>
+          <div class="navbar">
+            <div class="container d-flex justify-content-between">
+              <a href="#" class="navbar-brand d-flex align-items-center">
+                <img src="images/logo.svg" alt="ltv logo" />
+              </a>
+              <div class="ltv-icons-container">
+                <a href="#">
+                  <img src="images/icn_search.svg" alt="magnifying glass icon" />
+                </a>
+                <a href="#">
+                  <img src="images/icn_person.svg" alt="person icon" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div class="container ltv-banner-content">
+          <h1>Search Any Email Address</h1>
+          <p class="ltv-banner-text"><span>Start Here</span> - Look up the owner's name, photos and online profiles. See what you find!</p>
+          <div class="container ltv-search-form">
+            <div class="row">
+              <div class="col-md-9 ltv-required">
+                <input type="email" id="user-email" class="ltv-input-text" placeholder="Email" required>
+                <p>Please add a valid email address</p>
+              </div>
+              <div class="col-md-3">
+                <input type="button" id="search-action" class="ltv-button" value="GO!">
+              </div>
+            </div>
+            <p class="ltv-alert-text"><img src="images/lock.svg" alt="lock"> Enter Any Email Address. They won't be notified.</p>
+          </div>
+        </div>
+      </div>
+      <div class="ltv-info-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="ltv-info-text"> 
+                <h1>Reverse Email Lookup</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="ltv-item d-flex">
+                  <div class="ltv-item-number-container">
+                    <span class="ltv-item-number">1</spa>
+                  </div>
+                  <div class="ltv-item-text-container">
+                    <h4>Lorem Ipsum</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  </div>
+                </div>
+                <div class="ltv-item d-flex">
+                  <div class="ltv-item-number-container">
+                    <span class="ltv-item-number">2</spa>
+                  </div>
+                  <div class="ltv-item-text-container">
+                    <h4>Lorem Ipsum</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  </div>
+                </div>
+                <div class="ltv-item d-flex">
+                  <div class="ltv-item-number-container">
+                    <span class="ltv-item-number">3</spa>
+                  </div>
+                  <div class="ltv-item-text-container">
+                    <h4>Lorem Ipsum</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="ltv-item d-flex">
+                  <div class="ltv-item-number-container">
+                    <span class="ltv-item-number">4</spa>
+                  </div>
+                  <div class="ltv-item-text-container">
+                    <h4>Lorem Ipsum</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  </div>
+                </div>
+                <div class="ltv-item d-flex">
+                  <div class="ltv-item-number-container">
+                    <span class="ltv-item-number">5</spa>
+                  </div>
+                  <div class="ltv-item-text-container">
+                    <h4>Lorem Ipsum</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  </div>
+                </div>
+                <div class="ltv-item d-flex">
+                  <div class="ltv-item-number-container">
+                    <span class="ltv-item-number">6</spa>
+                  </div>
+                  <div class="ltv-item-text-container">
+                    <h4>Lorem Ipsum</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="container">
+          <div class="row ltv-footer">
+            <div class="col-md-9">
+              <p class="ltv-footer-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div class="col-md-3">
+              <p class="ltv-footer-links">
+                <a href="#">Terms</a>
+                |
+                <a href="#">Privacy</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
-
     <script src="js/scripts.js"></script>
   </body>
 </html>
