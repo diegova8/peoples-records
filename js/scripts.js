@@ -4,7 +4,7 @@ $(function() {
     const searchUser = () => {
 
         //get email input value
-        const userEmail = $('#user-email').val();
+        const userEmail = $('#ltv-user-email').val();
 
         $.ajax({
             type: "GET",
@@ -13,9 +13,6 @@ $(function() {
             success: function(data){
                console.log(data.email);
             },
-            error: function(error) {
-                console.log(error);
-            } 
           });
     }
     
