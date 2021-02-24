@@ -10,9 +10,7 @@ const validateEmail = (email) => {
     const regEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return regEx.test(String(email).toLowerCase());
 }
-// === Utils section end ===
-
-const initHome = () => {
+const setupSearch = () => {
     const userEmailInput = $('#ltv-user-email');
     const searchButton = $('#search-action');
     let isEmailValid = false;
@@ -22,7 +20,7 @@ const initHome = () => {
         toggleInputError();
         if (isEmailValid) {
             const userEmail = userEmailInput.val();
-            window.location.href = '/peoples-records/search-results?email=' + userEmail;
+            window.location.href = './search-results?email=' + userEmail;
         }
     }
 
@@ -44,6 +42,12 @@ const initHome = () => {
     searchButton.click(searchUser);
     // Used keyup instead of keypress, because the first one wont trigger with backspace
     userEmailInput.on('keyup', inputChangeText);
+}
+
+// === Utils section end ===
+
+const initHome = () => {
+    setupSearch();
 }
 
 const initResults = () => {
@@ -102,14 +106,10 @@ const initResults = () => {
         });
     }
     getUserRecords();
+    setupSearch();
 }
 
 $(function() {
-    // On home page it will load initHome to handle the email search
     if($("#ltv-page-home").length > 0) initHome();
-    // on search results page it will load initHome (for a possible new search) and initResults for data fetching
-    if($("#ltv-page-results").length > 0) {
-        initHome();
-        initResults();
-    }
+    if($("#ltv-page-results").length > 0) initResults();
 });
