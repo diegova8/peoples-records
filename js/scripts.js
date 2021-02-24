@@ -22,7 +22,7 @@ const initHome = () => {
         toggleInputError();
         if (isEmailValid) {
             const userEmail = userEmailInput.val();
-            window.location.href = '/search-results?email=' + userEmail;
+            window.location.href = '/peoples-records/search-results?email=' + userEmail;
         }
     }
 
