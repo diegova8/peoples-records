@@ -50,15 +50,32 @@ const initResults = () => {
     let userRecords = undefined;
     // Get email value from url parameters
     const currentEmail = getParameters('email');
-    
-    const ltvResultsNumber = $('#ltv-results-number');
-    const ltvResultsNameAge = $('#ltv-results-name-age');
-    const ltvResultsDescription = $('#ltv-results-description');
 
     const updateRecords = () => {
-        ltvResultsNumber.html(userRecords.lenght);
+
+        // Collected elements that will be updated with API data
+        const ltvResultsNumber = $('#ltv-results-number');
+        const ltvResultsText = $('#ltv-results-text');
+        const ltvResultsNameAge = $('#ltv-results-name-age');
+        const ltvResultsDescription = $('#ltv-results-description');
+        const ltvResultsEmail = $('#ltv-results-email');
+        const ltvResultsAddress = $('#ltv-results-address');
+        const ltvResultsPhones = $('#ltv-results-phones');
+        const ltvResultsRelatives = $('#ltv-results-relatives');
+        
+        // Elements updated with the API data
+        ltvResultsNumber.html("1 Result");
+        ltvResultsText.html("Look at the result below to see the details of the person you’re searched for.")
         ltvResultsNameAge.html(`${userRecords.first_name} ${userRecords.last_name}, 35`); // Age is not provided in the response
         ltvResultsDescription.html(`${userRecords.description}`);
+        ltvResultsEmail.html(`${userRecords.email}`);
+        ltvResultsAddress.html(`${userRecords.address}`);
+        userRecords.phone_numbers.map( (phone, index) => {
+            ltvResultsPhones.append(`<a href="tel:+${phone}" key="${index}">${phone}</a>`);
+        });
+        userRecords.relatives.map( (relative, index) => {
+            ltvResultsRelatives.append(`<p>${relative}</p>`);
+        });
     }
     
     const getUserRecords = () => {
@@ -66,23 +83,33 @@ const initResults = () => {
             type: "GET",
             url: "https://ltv-data-api.herokuapp.com/api/v1/records.json?email=" + currentEmail,
             cache: false,
-            beforeSend: () => {
-                // // Hide containers to show loading spinner
-                // $('#main-content').remove();
-                // $('#loading-content').removeClass('d-none');
-            },
             success: (data) => {
                 userRecords = data;
-                console.log(userRecords);
-                updateRecords();
+                const ltvLoadingContent = $('#ltv-loading-content');
+                const ltvSearchResults = $('#ltv-search-results');
+                const ltvResultsTittle = $('#ltv-results-tittle');
+                const ltvResultsCard = $('#ltv-results-card');
+
+                ltvLoadingContent.addClass('d-none');
+                ltvSearchResults.removeClass('d-none');
+                if(!$.isEmptyObject(userRecords)){
+                    updateRecords();
+                    ltvResultsTittle.removeClass('ltv-no-results')
+                } else {
+                    ltvResultsCard.removeClass('d-flex').addClass('d-none');
+                }
             },
         });
     }
-
     getUserRecords();
 }
 
 $(function() {
+    // On home page it will load initHome to handle the email search
     if($("#ltv-page-home").length > 0) initHome();
-    if($("#ltv-page-results").length > 0) initResults();
+    // on search results page it will load initHome (for a possible new search) and initResults for data fetching
+    if($("#ltv-page-results").length > 0) {
+        initHome();
+        initResults();
+    }
 });

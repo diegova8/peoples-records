@@ -210,11 +210,12 @@ html * {
     letter-spacing: 0;
 }
 
-.ltv-item .ltv-item-text-container p {
+.ltv-item-text-container p {
     font-size: 18px;
     color: #000000;
     letter-spacing: 0;
     line-height: 26px;
+    margin-bottom: 0;
 }
 
 footer .ltv-footer {
@@ -269,7 +270,6 @@ footer .ltv-footer .ltv-footer-links a {
     margin-top: 28px;
 }
 
-
 /* Results styles */
 
 .ltv-container .ltv-search-results {
@@ -307,8 +307,6 @@ footer .ltv-footer .ltv-footer-links a {
 
 .ltv-container .ltv-results-wrapper .ltv-results-card .ltv-results-img {
     background-color: #004A80;
-    width: 100px;
-    height: 90px;
     border-radius: 50px;
     position: relative;
 }
@@ -346,7 +344,7 @@ footer .ltv-footer .ltv-footer-links a {
 
 @media (min-width: 572px) {
     .ltv-container .ltv-results-wrapper .ltv-results-card .ltv-results-img {
-        width: 83px;
+        width: 63px;
         height: 63px;
     }
 
@@ -359,11 +357,11 @@ footer .ltv-footer .ltv-footer-links a {
 
 @media (min-width: 1200px) {
     .ltv-container .ltv-results-wrapper .ltv-results-card {
-        padding: 40px 40px 0 40px;
+        padding: 40px;
     }
 
     .ltv-container .ltv-results-wrapper .ltv-results-card .ltv-results-img {
-        width: 100px;
+        width: 90px;
         height: 90px;
     }
 
@@ -372,4 +370,13 @@ footer .ltv-footer .ltv-footer-links a {
         height: 40px;
     }
     
+}
+
+.ltv-results-wrapper .ltv-results-tittle.ltv-no-results {
+    margin: 92px 0px;
+}
+@media (min-width: 572px) {
+    .ltv-results-wrapper .ltv-results-tittle.ltv-no-results {
+        margin: 160px 0px;
+    }
 }

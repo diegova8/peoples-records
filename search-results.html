@@ -15,7 +15,7 @@
       <header>
         <div class="navbar">
           <div class="container d-flex justify-content-between">
-            <a href="#" class="navbar-brand d-flex align-items-center">
+            <a href="/index" class="navbar-brand d-flex align-items-center">
               <img src="images/logo.svg" alt="ltv logo" />
             </a>
             <div class="ltv-icons-container">
@@ -29,46 +29,41 @@
           </div>
         </div>
       </header>
-      <div class="ltv-info-wrapper ltv-search-results">
-        <div class="container">
-          <!--TBD number of results dynamic-->
-          <div class="ltv-results-wrapper">
-            <div class="ltv-results-tittle">
-              <!-- <h1>0 Results</h1>
-              <p>Try starting a new search below</p> -->
-              <h1 id="ltv-results-number">0 results</h1>
-              <p id="ltv-results-text">Look at the result below to see the details of the person you’re searched for.</p>
-            </div>
-            <div class="ltv-results-card d-flex">
-              <div class="ltv-results-img d-none d-sm-block">
-                <img src="images/icn_person.svg" alt="Person icon">
+      <div id="ltv-search-results" class="d-none">
+        <div class="ltv-info-wrapper ltv-search-results">
+          <div class="container">
+            <div class="ltv-results-wrapper">
+              <div id="ltv-results-tittle" class="ltv-results-tittle ltv-no-results">
+                <h1 id="ltv-results-number">0 results</h1>
+                <p id="ltv-results-text">Try starting a new search below</p>
               </div>
-              <div class="ltv-results-data">
-                <div class="container">
-                  <h3 id="ltv-results-name-age"></h3>
-                  <p id="ltv-results-description"></p>
-                  <div class="row">
-                    <div class="col-sm-6 ltv-item">
-                      <div class="ltv-item-text-container">
-                        <h4>Address</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <div id="ltv-results-card" class="ltv-results-card d-flex">
+                <div class="ltv-results-img d-none d-sm-block">
+                  <img src="images/icn_person.svg" alt="Person icon">
+                </div>
+                <div class="ltv-results-data col-9">
+                  <div class="container ltv-item-text-container">
+                    <h3 id="ltv-results-name-age"></h3>
+                    <p id="ltv-results-description"></p>
+                    <div class="row">
+                      <div class="col-sm-6 ltv-item">
+                        <div class="ltv-item-text-container">
+                          <h4>Address</h4>
+                          <p id="ltv-results-address"></p>
+                        </div>
+                        <div class="ltv-item-text-container">
+                          <h4>Email</h4>
+                          <p id="ltv-results-email"></p>
+                        </div>
                       </div>
-                      <div class="ltv-item-text-container">
-                        <h4>Email</h4>
-                        <p>loremipsum@dolorsit.com</p>
-                      </div>
-                    </div>
-                    <div class="col-sm-6 ltv-item">
-                      <div class="ltv-item-text-container d-flex flex-column">
-                        <h4>Phone Numbers</h4>
-                        <a href="tel:+5555555555">(555) 555-5555</a>
-                        <a href="tel:+5555555555">(555) 555-5555</a>
-                        <a href="tel:+5555555555">(555) 555-5555</a>
-                      </div>
-                      <div class="ltv-item-text-container">
-                        <h4>Relatives</h4>
-                        <p>Jane Smith</p>
-                        <p>John Smith Jr</p>
+                      <div class="col-sm-6 ltv-item">
+                        <div id="ltv-results-phones" class="ltv-item-text-container d-flex flex-column">
+                          <h4>Phone Numbers</h4>
+                          <!--phones will go here-->
+                        </div>
+                        <div id="ltv-results-relatives" class="ltv-item-text-container">
+                          <h4>Relatives</h4>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -77,22 +72,30 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="ltv-search-section d-none d-md-block d-lg-none">
-        <div class="container ltv-banner-content">
-          <h1>Can’t Find The Right Person?</h1>
-          <p class="ltv-banner-text"><span>Try Again</span> - Make a new search</p>
-          <div class="container ltv-search-form">
-            <div class="row">
-              <div id="email-" class="col-md-9">
-                <input type="email" id="ltv-user-email" class="ltv-input-text" placeholder="Email" required>
-                <p>Please add a valid email address</p>
+        <div class="ltv-search-section">
+          <div class="container ltv-banner-content">
+            <h1>Can’t Find The Right Person?</h1>
+            <p class="ltv-banner-text"><span>Try Again</span> - Make a new search</p>
+            <div class="container ltv-search-form">
+              <div class="row">
+                <div id="email-" class="col-md-9">
+                  <input type="email" id="ltv-user-email" class="ltv-input-text" placeholder="Email" required>
+                  <p>Please add a valid email address</p>
+                </div>
+                <div class="col-md-3">
+                  <input type="button" id="search-action" class="ltv-button" value="GO!">
+                </div>
               </div>
-              <div class="col-md-3">
-                <input type="button" id="search-action" class="ltv-button" value="GO!">
-              </div>
+              <p class="ltv-alert-text"><img src="images/lock.svg" alt="lock"> Enter Any Email Address. They won't be notified.</p>
             </div>
-            <p class="ltv-alert-text"><img src="images/lock.svg" alt="lock"> Enter Any Email Address. They won't be notified.</p>
+          </div>
+        </div>
+      </div>
+      <div id="ltv-loading-content">
+        <div class="ltv-spinner-container ltv-info-wrapper">
+          <div class="ltv-loading-spinner">
+            <img src="images/loading_spinner.gif" alt="Loading spinner"/>
+            <p>Please wait a moment...</p>
           </div>
         </div>
       </div>
