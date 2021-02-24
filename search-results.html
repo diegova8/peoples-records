@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    <div class="ltv-container">
+    <div id="ltv-page-results" class="ltv-container">
       <header>
         <div class="navbar">
           <div class="container d-flex justify-content-between">
@@ -36,8 +36,8 @@
             <div class="ltv-results-tittle">
               <!-- <h1>0 Results</h1>
               <p>Try starting a new search below</p> -->
-              <h1>1 Result</h1>
-              <p>Look at the result below to see the details of the person you’re searched for.</p>
+              <h1 id="ltv-results-number">0 results</h1>
+              <p id="ltv-results-text">Look at the result below to see the details of the person you’re searched for.</p>
             </div>
             <div class="ltv-results-card d-flex">
               <div class="ltv-results-img d-none d-sm-block">
@@ -45,9 +45,8 @@
               </div>
               <div class="ltv-results-data">
                 <div class="container">
-                  <h3>John Smith, 35</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <h3 id="ltv-results-name-age"></h3>
+                  <p id="ltv-results-description"></p>
                   <div class="row">
                     <div class="col-sm-6 ltv-item">
                       <div class="ltv-item-text-container">
