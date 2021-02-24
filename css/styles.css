@@ -143,7 +143,7 @@ html * {
     }
 }
 
-.ltv-item {
+.ltv-item.ltv-list-item {
     margin-bottom: 30px;
 }
 
@@ -215,7 +215,7 @@ html * {
     color: #000000;
     letter-spacing: 0;
     line-height: 26px;
-    margin-bottom: 0;
+    margin-bottom: 20px;
 }
 
 footer .ltv-footer {
@@ -379,4 +379,8 @@ footer .ltv-footer .ltv-footer-links a {
     .ltv-results-wrapper .ltv-results-tittle.ltv-no-results {
         margin: 160px 0px;
     }
+}
+
+.ltv-results-wrapper .ltv-results-description {
+
 }
